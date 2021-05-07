@@ -16,7 +16,11 @@ export const AddCategory = ({setCategories}: Props) => {
         e.preventDefault();
 
         if (inputValue.trim().length > 2) {
-            setCategories(cats => [inputValue, ...cats]);
+            setCategories(cats => {
+                const exist = cats.find(cat => cat === inputValue);
+                if (exist) return [...cats]; 
+                return [inputValue, ...cats]
+            });
             setInputValue('');
         }
     }

@@ -9,7 +9,7 @@ interface IGifs {
 
 export const GifGridItem = ({id, title, url}:IGifs) => {
     return (
-        <div className="card animate__animated animate__flash">
+        <div className="card animate__animated animate__fadeInUp">
            <img src={url} alt={title} />
             <p>{title}</p>
         </div>
