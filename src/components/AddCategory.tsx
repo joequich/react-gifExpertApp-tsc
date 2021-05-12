@@ -1,7 +1,7 @@
 import React, { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from 'react';
 import PropTypes from 'prop-types';
 
-type Props = {
+interface Props {
     setCategories: Dispatch<SetStateAction<string[]>>;
 }
 
@@ -27,7 +27,7 @@ export const AddCategory = ({setCategories}: Props) => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form role="search" aria-label="Search a gif" onSubmit={handleSubmit}>
                 <input type="text" placeholder="Search" value={inputValue} onChange={handleInputChange}/>
             </form>
         </>

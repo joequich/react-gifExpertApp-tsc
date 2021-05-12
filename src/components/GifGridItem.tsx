@@ -1,15 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-interface IGifs {
-    id: string;
+//IGifs
+export interface Props {
     title: string;
     url: string;
 }
 
-export const GifGridItem = ({id, title, url}:IGifs) => {
+const GifGridItem = ({title, url}:Props) => {
     return (
-        <div className="card animate__animated animate__fadeInUp">
+        <div role="listitem" className="card animate__animated animate__fadeInUp">
            <img src={url} alt={title} />
             <p>{title}</p>
         </div>
@@ -23,3 +23,5 @@ GifGridItem.propTypes = {
 GifGridItem.defaultProps = {
     id: ''
 };
+
+export default GifGridItem;
