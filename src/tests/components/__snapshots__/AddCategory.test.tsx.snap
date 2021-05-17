@@ -1,12 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests in <AddCategory /> should display the component correctly 1`] = `
+exports[`AddCategory renders the component correctly 1`] = `
 <DocumentFragment>
   <form
     aria-label="Search a gif"
     role="search"
   >
     <input
+      aria-label="Search"
       placeholder="Search"
       type="text"
       value=""
