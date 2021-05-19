@@ -7,7 +7,7 @@ interface IGifs{
     url: string;
 }
 
-interface IFetchGifs {
+export interface IFetchGifs {
     data: IGifs[];
     loading: boolean;
 }

@@ -18,8 +18,8 @@ describe('AddCategory', () => {
     });
 
     test('should change the text box', () => {
-        const { getByLabelText } = renderUI();
-        const input = getByLabelText('Search');
+        renderUI();
+        const input = screen.getByLabelText('Search');
         const value = 'Hola mundojj';
 
         expect((input as HTMLInputElement).value).toBe('') // empty before
@@ -28,22 +28,21 @@ describe('AddCategory', () => {
     })
 
     test('should not post the information with submit', () => {
-        const { getByRole } = renderUI();
-        
-        fireEvent.submit(getByRole("search"));
+        renderUI();
+        fireEvent.submit(screen.getByRole("search"));
         expect(setCategories).not.toHaveBeenCalled();
     });
 
     test('should call the setCategories and clear the text box', () => {
-        const { getByRole, getByLabelText } = renderUI();
-        const input = getByLabelText('Search');
+        renderUI();
+        const input = screen.getByLabelText('Search');
         const value = 'Music';
 
         // 1. simulate inputChange
         fireEvent.change(input, { target: { value: value } })
 
         // 2. simulate submit
-        fireEvent.submit(getByRole("search"));
+        fireEvent.submit(screen.getByRole("search"));
 
         // 3. setCategories must have been called
         expect(setCategories).toHaveBeenCalled();
