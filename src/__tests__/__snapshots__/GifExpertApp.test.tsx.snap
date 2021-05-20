@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifExpertApp render list of categories 1`] = `
+Array [
+  <ol>
+    <li>
+      <h3
+        class="category-title"
+      >
+        music
+      </h3>
+      <p
+        class="animate__pulse"
+      >
+        Loading...
+      </p>
+      <div
+        class="card-grid animate__slideInUp"
+        role="list"
+      />
+    </li>
+    <li>
+      <h3
+        class="category-title"
+      >
+        movies
+      </h3>
+      <p
+        class="animate__pulse"
+      >
+        Loading...
+      </p>
+      <div
+        class="card-grid animate__slideInUp"
+        role="list"
+      />
+    </li>
+  </ol>,
+  <div
+    class="card-grid animate__slideInUp"
+    role="list"
+  />,
+  <div
+    class="card-grid animate__slideInUp"
+    role="list"
+  />,
+]
+`;

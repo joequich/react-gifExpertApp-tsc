@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import { AddCategory } from './components/AddCategory';
 import { GifGrid } from './components/GifGrid';
 
-export const GifExpertApp = () => {
-    const [ categories, setCategories ] = useState<string[]>(['music']);
+interface Props {
+    defaultCategories?: string[];
+}
+
+export const GifExpertApp = ( {defaultCategories = []}: Props) => {
+    const [ categories, setCategories ] = useState<string[]>(defaultCategories);
 
     return (
         <>
