@@ -7,7 +7,7 @@ export interface Props {
     url: string;
 }
 
-const GifGridItem = ({title, url}:Props) => {
+export const GifGridItem = ({title, url}:Props) => {
     return (
         <div role="listitem" className="card animate__animated animate__fadeInUp">
            <img src={url} alt={title} />
@@ -23,5 +23,3 @@ GifGridItem.propTypes = {
 GifGridItem.defaultProps = {
     id: ''
 };
-
-export default GifGridItem;

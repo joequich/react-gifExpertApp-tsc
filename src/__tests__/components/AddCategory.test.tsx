@@ -3,7 +3,6 @@ import { AddCategory, Props } from '../../components/AddCategory';
 
 describe('AddCategory', () => {
     const setCategories = jest.fn();
-
     const defaultProps: Props = {
         setCategories: setCategories,
     }
@@ -12,12 +11,7 @@ describe('AddCategory', () => {
         return render(<AddCategory {...defaultProps} {...props}/>)
     }
 
-    it('renders the component correctly', () => {
-        const { asFragment } = renderUI();
-        expect(asFragment()).toMatchSnapshot();
-    });
-
-    test('should change the text box', () => {
+    it('change the text box', () => {
         renderUI();
         const input = screen.getByLabelText('Search');
         const value = 'Hola mundojj';
@@ -27,13 +21,13 @@ describe('AddCategory', () => {
         expect((input as HTMLInputElement).value).toBe(value);
     })
 
-    test('should not post the information with submit', () => {
+    test('not post the information with submit', () => {
         renderUI();
         fireEvent.submit(screen.getByRole("search"));
         expect(setCategories).not.toHaveBeenCalled();
     });
 
-    test('should call the setCategories and clear the text box', () => {
+    it('call the setCategories and clear the text box', () => {
         renderUI();
         const input = screen.getByLabelText('Search');
         const value = 'Music';

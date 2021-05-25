@@ -1,6 +1,6 @@
 import React from 'react';
 import { useFetchGifs } from '../hooks/useFetchGifs';
-import GifGridItem from './GifGridItem';
+import { GifGridItem } from './GifGridItem';
 import PropTypes from 'prop-types';
 
 type Props = {
@@ -18,8 +18,8 @@ export const GifGrid = ({category}:Props) => {
 
     return (
         <>
-            <li>
-                <h3 className="category-title">{ category }</h3>
+            <div role="region" aria-labelledby="title">
+                <h3 id="title" className="category-title">{ category }</h3>
                 { loading && <p className="animate__pulse">Loading...</p> }
                 <div role="list" className="card-grid animate__slideInUp">
                     {images.map( (img:IGifs) => (
@@ -29,7 +29,8 @@ export const GifGrid = ({category}:Props) => {
                         />
                     ))}
                 </div>
-            </li>
+
+            </div>
         </>
     )
 }

@@ -8,15 +8,6 @@ describe('GifGrid', () => {
     const category = 'music';
     const mockedUseFetchGifs = useFetchGifs as jest.Mock<IFetchGifs>;
 
-    it('render component correctly', () => {
-        mockedUseFetchGifs.mockReturnValue({
-            data: [],
-            loading: true
-        });
-        const { asFragment } = render(<GifGrid category={category}/>);
-        expect(asFragment()).toMatchSnapshot();
-    });
-
     it('render items when loading images useFetchGifs', () => {
         const gifs = [{
             id: 'ABC',
